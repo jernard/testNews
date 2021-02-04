@@ -9,10 +9,10 @@ import Foundation
 
 class LoginInteractor: LoginInteractorProtocol {
     weak var presenter: LoginPresenterProtocol?
-    var networkManager: NetworkManager
+    var networkManager: NetworkManagerProtocol
     
     
-    required init(networkManager: NetworkManager) {
+    required init(networkManager: NetworkManagerProtocol) {
         self.networkManager = networkManager
     }
     

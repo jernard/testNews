@@ -11,4 +11,5 @@ enum SaveDataErrors: Error {
     case dataError
     case savingError
     case loadingError
+    case other
 }

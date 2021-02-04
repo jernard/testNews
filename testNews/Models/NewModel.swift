@@ -17,3 +17,7 @@ struct NewModel: Codable {
     let imagem: String
     let source: String
 }
+
+extension NewModel: Equatable {
+    
+}

@@ -11,12 +11,12 @@ class LoginPresenter: LoginPresenterProtocol {
     
     weak var view: LoginViewControllerProtocol?
     var interactor: LoginInteractorProtocol?
-    var coordinator: LoginCoordinator
+    var coordinator: LoginFlow
     
     
     required init(view: LoginViewControllerProtocol,
                   interactor: LoginInteractorProtocol,
-                  coordinator: LoginCoordinator) {
+                  coordinator: LoginFlow) {
         
         self.view = view
         self.interactor = interactor

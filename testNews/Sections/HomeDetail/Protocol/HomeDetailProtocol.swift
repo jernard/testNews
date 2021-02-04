@@ -28,9 +28,9 @@ protocol HomeDetailPresenterProtocol: class {
 
 protocol HomeDetailInteractorProtocol: class {
     var presenter: HomeDetailPresenterProtocol? { get set }
-    var networkManager: NetworkManager { get set }
+    var networkManager: NetworkManagerProtocol { get set }
     
-    init(networkManager: NetworkManager)
+    init(networkManager: NetworkManagerProtocol)
     
     func fetchNews(id: String)
 }

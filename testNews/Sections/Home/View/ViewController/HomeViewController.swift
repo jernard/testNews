@@ -35,6 +35,7 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     
     // MARK: - Helpers
     func reloadData() {
+        guard let tableView = tableView else { return }
         tableView.reloadData()
     }
 }

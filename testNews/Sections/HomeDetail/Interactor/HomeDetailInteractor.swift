@@ -9,9 +9,9 @@ import Foundation
 
 class HomeDetailInteracor: HomeDetailInteractorProtocol {
     weak var presenter: HomeDetailPresenterProtocol?
-    var networkManager: NetworkManager
+    var networkManager: NetworkManagerProtocol
     
-    required init(networkManager: NetworkManager) {
+    required init(networkManager: NetworkManagerProtocol) {
         self.networkManager = networkManager
     }
     

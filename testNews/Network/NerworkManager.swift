@@ -11,13 +11,13 @@ typealias loginHandler = (Result<Token, Error>) -> Void
 typealias fetchNewsHandler = (Result<[NewModel], Error>) -> Void
 typealias fetchNewHandler = (Result<[FullNewModel], Error>) -> Void
 
-protocol NerworkManagerProtocol {
+protocol NetworkManagerProtocol {
     func requestLogin(with user: LoginBody, _ completion: @escaping loginHandler)
     func fetchNews(_ completion: @escaping fetchNewsHandler)
     func fetchNew(with id: String, _ completion: @escaping fetchNewHandler)
 }
 
-class NetworkManager: NerworkManagerProtocol{
+class NetworkManager: NetworkManagerProtocol{
     func requestLogin(with user: LoginBody, _ completion: @escaping loginHandler) {
         request(target: .login(user), completion: completion)
     }

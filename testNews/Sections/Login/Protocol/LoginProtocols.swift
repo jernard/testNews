@@ -16,9 +16,9 @@ protocol LoginViewControllerProtocol: class {
 protocol LoginPresenterProtocol: class {
     var view: LoginViewControllerProtocol? { get set }
     var interactor: LoginInteractorProtocol? { get set }
-    var coordinator: LoginCoordinator { get set }
+    var coordinator: LoginFlow { get set }
     
-    init(view: LoginViewControllerProtocol, interactor: LoginInteractorProtocol, coordinator: LoginCoordinator)
+    init(view: LoginViewControllerProtocol, interactor: LoginInteractorProtocol, coordinator: LoginFlow)
     
     func requestLogin(user: String, password: String)
     
@@ -29,9 +29,9 @@ protocol LoginPresenterProtocol: class {
 
 protocol LoginInteractorProtocol: class {
     var presenter: LoginPresenterProtocol? { get set }
-    var networkManager: NetworkManager { get set }
+    var networkManager: NetworkManagerProtocol { get set }
     
-    init(networkManager: NetworkManager) 
+    init(networkManager: NetworkManagerProtocol) 
     
     func requestLogin(login: LoginBody)
 }

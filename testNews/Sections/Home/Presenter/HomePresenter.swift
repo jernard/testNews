@@ -12,13 +12,13 @@ class HomePresenter: HomePresenterProtocol {
        
     weak var view: HomeViewControllerProtocol?
     var interactor: HomeInteractorProtocol?
-    var coordinator: HomeCoordinator
+    var coordinator: HomeFlow
     
-    private var state: State<NewModel, Error> = .loading {
+    var state: State<NewModel, Error> = .loading {
         didSet { updateTableView() }
     }
     
-    required init(view: HomeViewControllerProtocol, interactor: HomeInteractorProtocol, coordinator: HomeCoordinator) {
+    required init(view: HomeViewControllerProtocol, interactor: HomeInteractorProtocol, coordinator: HomeFlow) {
         self.view = view
         self.interactor = interactor
         self.coordinator = coordinator
@@ -37,7 +37,7 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func failedFetchNews() {
-        // TODO:
+        coordinator.coordinateToLogin()
     }
     
     // MARK: - DataSource

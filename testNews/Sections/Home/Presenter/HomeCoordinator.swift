@@ -10,6 +10,7 @@ import UIKit
 
 protocol HomeFlow: class {
     func coordinateToDetailNew(model: NewModel)
+    func coordinateToLogin()
 }
 
 class HomeCoordinator: Coordinator, HomeFlow {
@@ -40,5 +41,12 @@ class HomeCoordinator: Coordinator, HomeFlow {
         let detailCoordinator = HomeDetailCoordinator(navigationController: navigationController, model: model)
         navigationController.isNavigationBarHidden = false
         coordinate(to: detailCoordinator)
+    }
+    
+    func coordinateToLogin() {
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        navigationController.viewControllers = []
+        navigationController.isNavigationBarHidden = true
+        coordinate(to: loginCoordinator)
     }
 }
